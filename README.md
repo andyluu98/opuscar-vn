@@ -47,8 +47,6 @@ Sau đó khởi động lại Claude Code và dùng từ bất kỳ thư mục n
 - Dự án của từng bộ phim, từ mã nguồn tới video hoàn chỉnh, nằm trong thư mục anh đang đứng khi bắt đầu.
 - Với agent khác, chép thư mục [`plugin/skills/lemo-opuscar/`](plugin/skills/lemo-opuscar/) vào thư mục skill của agent đó.
 
-Repo này đang để riêng tư. Máy cài skill cần đăng nhập GitHub (`gh auth login`) có quyền xem repo.
-
 ### Cách 2: clone repo
 
 ```sh
