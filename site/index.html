@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Opuscar VN</title>
 <meta name="description" content="Bộ phong cách phim dựng hoàn toàn bằng code: 66 phong cách để coding agent đạo diễn, vẽ, soạn nhạc và xuất phim.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
 :root{
   --bg:#f7f6f2; --panel:#ffffff; --ink:#1c1b19; --muted:#5f5c55; --line:#e3e0d8;
@@ -87,6 +90,51 @@ footer p{margin:0 0 6px;max-width:70ch}
   .hero{padding:44px 0 32px}
   header.top nav{display:none}
 }
+
+/* ---- Hero: phòng chiếu ---- */
+:root{--hero-bg:#0E1630;--hero-ink:#F2F0E8;--hero-mute:#9AA3BF;--hero-line:rgba(255,255,255,.14);--hero-accent:#5EEAD4;--leader:#F4C95D;--display:"Bricolage Grotesque",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,Consolas,monospace}
+header.top{background:var(--hero-bg);border-bottom:1px solid var(--hero-line);color:var(--hero-ink)}
+header.top b{font-family:var(--display);font-weight:800;letter-spacing:.01em}
+header.top nav a{color:var(--hero-mute)}
+header.top nav a:hover{color:var(--hero-ink)}
+.progress{background:var(--hero-accent)}
+.hero2{position:relative;overflow:hidden;background:var(--hero-bg);color:var(--hero-ink);padding:clamp(40px,7vw,88px) 0 clamp(48px,7vw,96px)}
+.hero2::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 75% at 74% 46%,rgba(94,234,212,.18),transparent 70%),radial-gradient(50% 60% at 8% 100%,rgba(244,201,93,.07),transparent 70%)}
+.hero2::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.07;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>")}
+.hero2-inner{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center}
+.hero2 .eyebrow{display:flex;align-items:center;gap:10px;margin:0 0 22px;font:500 13px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--hero-mute)}
+.hero2 .rec{width:9px;height:9px;border-radius:50%;background:var(--leader);box-shadow:0 0 0 0 rgba(244,201,93,.6);animation:rec 2s ease-out infinite}
+@keyframes rec{0%{box-shadow:0 0 0 0 rgba(244,201,93,.55)}70%{box-shadow:0 0 0 10px rgba(244,201,93,0)}100%{box-shadow:0 0 0 0 rgba(244,201,93,0)}}
+.hero2 h1{font:800 clamp(40px,6.4vw,84px)/.98 var(--display);letter-spacing:-.035em;margin:0 0 22px;max-width:13ch;font-variation-settings:"opsz" 96}
+.hero2 h1 .w{display:inline-block;will-change:transform}
+.hero2 h1 .hl{color:var(--hero-accent)}
+.hero2 .lead{font-size:clamp(17px,1.9vw,20px);line-height:1.6;color:var(--hero-mute);max-width:46ch;margin:0 0 30px}
+.hero2 .btn{border-color:var(--hero-line);background:transparent;color:var(--hero-ink);padding:13px 22px}
+.hero2 .btn:hover{border-color:var(--hero-ink)}
+.hero2 .btn.primary{background:var(--hero-accent);border-color:var(--hero-accent);color:#06201C}
+.hero2 .facts{margin:26px 0 0;font:400 13px/1.5 var(--mono);color:var(--hero-mute);letter-spacing:.04em}
+.hero2 .facts i{font-style:normal;color:var(--hero-line);margin:0 8px}
+.hero2 .note{background:transparent;border-left:2px solid var(--hero-line);color:var(--hero-mute);font-size:14px;margin-top:18px;padding:2px 0 2px 14px;border-radius:0}
+.stage-wrap{position:relative}
+.stage{position:relative;background:#05080F;border-radius:6px;padding:20px 0;box-shadow:0 30px 80px -20px rgba(0,0,0,.6),0 0 0 1px var(--hero-line);transform-origin:50% 60%}
+.perf{position:absolute;left:0;right:0;height:20px;background:radial-gradient(circle,#0E1630 3px,transparent 3.5px) 0 50%/22px 20px repeat-x;opacity:.9}
+.perf.top{top:0}.perf.bottom{bottom:0}
+.screen{position:relative;aspect-ratio:4/3;overflow:hidden;background:#111}
+.screen img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.screen img:not(:first-child){opacity:0}
+.vf{position:absolute;width:16px;height:16px;border:2px solid rgba(255,255,255,.55);z-index:2}
+.vf.tl{top:30px;left:12px;border-right:0;border-bottom:0}.vf.tr{top:30px;right:12px;border-left:0;border-bottom:0}
+.vf.bl{bottom:30px;left:12px;border-right:0;border-top:0}.vf.br{bottom:30px;right:12px;border-left:0;border-top:0}
+.stage .badge{position:absolute;z-index:2;left:26px;top:42px;font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(5,8,15,.62);padding:6px 8px;border-radius:3px;backdrop-filter:blur(4px)}
+.bar{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin:14px 4px 0;font-family:var(--mono);font-size:13px;color:var(--hero-mute)}
+.bar .sname{font:700 16px/1.2 var(--display);color:var(--hero-ink);letter-spacing:-.01em}
+.bar .tc{color:var(--leader);font-variant-numeric:tabular-nums;letter-spacing:.06em}
+.code{margin:12px 0 0;padding:12px 14px;background:rgba(255,255,255,.04);border:1px solid var(--hero-line);border-radius:8px;font:400 13px/1.5 var(--mono);color:var(--hero-ink);min-height:44px;overflow:hidden;white-space:pre-wrap}
+.code .k{color:var(--hero-accent)}.code .s{color:var(--leader)}
+.code .cur{display:inline-block;width:7px;height:1.1em;background:var(--hero-accent);vertical-align:-2px;margin-left:2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+@media (max-width:900px){.hero2-inner{grid-template-columns:1fr}.hero2 h1{max-width:16ch}}
+@media (prefers-reduced-motion:reduce){.hero2 .rec,.code .cur{animation:none}}
 </style>
 </head>
 <body>
@@ -99,21 +147,47 @@ footer p{margin:0 0 6px;max-width:70ch}
 </header>
 
 <main>
-<div class="wrap">
-  <div class="hero">
-    <h1>Phim ngắn dựng hoàn toàn bằng code.</h1>
-    <p class="lead">Chọn một trong 66 phong cách, đưa câu chuyện của bạn, rồi để coding agent đạo diễn: vẽ hình, soạn nhạc, thu giọng đọc, trộn âm và xuất phim.</p>
-    <div class="btns">
-      <a class="btn primary" href="#cai-dat">Cài skill</a>
-      <a class="btn" href="https://github.com/andyluu98/opuscar-vn">Xem trên GitHub</a>
+<section class="hero2" aria-labelledby="h-title">
+  <div class="hero2-inner">
+    <div class="copy">
+      <p class="eyebrow"><span class="rec" aria-hidden="true"></span>Phim dựng bằng code</p>
+      <h1 id="h-title">Phim ngắn, dựng hoàn toàn bằng <span class="hl">code.</span></h1>
+      <p class="lead">Chọn một trong 66 phong cách, đưa câu chuyện của bạn, rồi để coding agent đạo diễn: vẽ hình, soạn nhạc, thu giọng đọc, trộn âm và xuất phim.</p>
+      <div class="btns">
+        <a class="btn primary" href="#cai-dat">Cài skill</a>
+        <a class="btn" href="https://github.com/andyluu98/opuscar-vn">Xem trên GitHub</a>
+      </div>
+      <p class="facts">66 phong cách<i>/</i>không video AI<i>/</i>không cảnh stock</p>
+      <p class="note">Các phong cách được tinh chỉnh cho Claude Opus 5.5. Model khác có thể không tái tạo tốt.</p>
     </div>
-    <p class="note">Các phong cách được tinh chỉnh cho Claude Opus 5.5. Model khác có thể không tái tạo tốt.</p>
+    <div class="stage-wrap">
+      <div class="stage" role="img" aria-label="Khung chiếu luân phiên các hình minh họa phong cách phim: bảng trắng, màu nước, ukiyo-e, pixel RPG, bản vẽ kỹ thuật và các phong cách khác">
+        <div class="perf top" aria-hidden="true"></div>
+        <div class="screen">
+          <img src="img/phong-cach-whiteboard.svg" alt="" width="480" height="360">
+          <img src="img/phong-cach-watercolor.svg" alt="" width="480" height="360">
+          <img src="img/phong-cach-ukiyoe.svg" alt="" width="480" height="360">
+          <img src="img/phong-cach-pixel-rpg.svg" alt="" width="480" height="360">
+          <img src="img/phong-cach-blueprint.svg" alt="" width="480" height="360">
+          <img src="img/phong-cach-risograph.svg" alt="" width="480" height="360">
+          <img src="img/phong-cach-woodcut.svg" alt="" width="480" height="360">
+          <img src="img/phong-cach-stained-glass.svg" alt="" width="480" height="360">
+          <img src="img/phong-cach-swiss-motion.svg" alt="" width="480" height="360">
+          <img src="img/phong-cach-hologram-hud.svg" alt="" width="480" height="360">
+          <img src="img/phong-cach-silent-film.svg" alt="" width="480" height="360">
+          <img src="img/phong-cach-chalkboard.svg" alt="" width="480" height="360">
+        </div>
+        <span class="vf tl" aria-hidden="true"></span><span class="vf tr" aria-hidden="true"></span><span class="vf bl" aria-hidden="true"></span><span class="vf br" aria-hidden="true"></span>
+        <span class="badge" aria-hidden="true">Hình minh họa</span>
+        <div class="perf bottom" aria-hidden="true"></div>
+      </div>
+      <div class="bar" aria-hidden="true"><span class="sname" id="sname">Bảng trắng</span><span class="tc" id="tc">00:00:00:00</span></div>
+      <pre class="code" aria-hidden="true"><code id="code">film.style("whiteboard").voice("kokoro").render()</code></pre>
+    </div>
   </div>
+</section>
 
-  <figure class="banner">
-    <img src="img/banner.svg" alt="Dải phim gồm các khung hình minh họa theo nhiều phong cách: bảng trắng, ukiyo-e, bản vẽ kỹ thuật, kính màu, pixel RPG, hologram, bảng phấn" width="1600" height="900">
-    <figcaption>Hình minh họa vẽ riêng cho trang này, không phải khung phim thật.</figcaption>
-  </figure>
+<div class="wrap">
 
   <section class="block">
     <h2>Làm ra một bộ phim thế nào</h2>
@@ -224,29 +298,74 @@ trang trại cà phê gia đình tôi. Giọng nữ ấm áp.</pre>
     }
 
     // Mở đầu: tách chữ tiêu đề rồi chạy một timeline.
-    var h1 = document.querySelector(".hero h1");
+    var h1 = document.querySelector(".hero2 h1");
     if (h1 && !h1.querySelector(".w")) {
       h1.innerHTML = h1.textContent.trim().split(/\s+/).map(function (w) {
         return '<span class="w">' + w + "</span>";
       }).join(" ");
     }
-    gsap.timeline({ defaults: { ease: "power3.out" } })
-      .from(".hero h1 .w", { yPercent: 60, opacity: 0, rotate: 2, duration: 0.9, stagger: 0.07 })
-      .from(".hero .lead", { y: 24, opacity: 0, duration: 0.7 }, "-=0.5")
-      .from(".hero .btn", { y: 18, opacity: 0, duration: 0.5, stagger: 0.1 }, "-=0.4")
-      .from(".hero .note", { y: 14, opacity: 0, duration: 0.5 }, "-=0.3");
+    var tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+    tl.from(".hero2 .eyebrow", { y: 12, opacity: 0, duration: 0.5 })
+      .from(".hero2 h1 .w", { yPercent: 70, opacity: 0, rotate: 2, duration: 0.9, stagger: 0.07 }, "-=0.2")
+      .from(".hero2 .lead", { y: 24, opacity: 0, duration: 0.7 }, "-=0.5")
+      .from(".hero2 .btn", { y: 18, opacity: 0, duration: 0.5, stagger: 0.1 }, "-=0.4")
+      .from(".hero2 .facts, .hero2 .note", { y: 12, opacity: 0, duration: 0.5, stagger: 0.08 }, "-=0.3")
+      .from(".stage", { y: 40, opacity: 0, scale: 0.95, rotate: 1.5, duration: 1, ease: "power4.out" }, 0.25)
+      .from(".bar, .code", { y: 14, opacity: 0, duration: 0.6, stagger: 0.1 }, "-=0.5");
+
+    // Khung chiếu: đổi phong cách, đồng hồ timecode và dòng lệnh.
+    var STYLES = [["whiteboard","Bảng trắng"],["watercolor","Màu nước"],["ukiyoe","Ukiyo-e"],["pixel-rpg","Pixel RPG"],
+      ["blueprint","Bản vẽ kỹ thuật"],["risograph","In Risograph"],["woodcut","Khắc gỗ"],["stained-glass","Kính màu"],
+      ["swiss-motion","Đồ họa Thụy Sĩ"],["hologram-hud","Giao diện hologram"],["silent-film","Phim câm"],["chalkboard","Bảng phấn"]];
+    var frames = gsap.utils.toArray(".screen img");
+    var sname = document.getElementById("sname"), tc = document.getElementById("tc"), codeEl = document.getElementById("code");
+    var cur = 0, typing = null, loop = null;
+    function typeLine(slug) {
+      var parts = [["film", "k"], [".style(", ""], ['"' + slug + '"', "s"], [").voice(", ""], ['"kokoro"', "s"], [").render()", ""]];
+      var full = parts.map(function (p) { return p[0]; }).join("");
+      var o = { n: 0 };
+      if (typing) typing.kill();
+      typing = gsap.to(o, { n: full.length, duration: 0.9, ease: "none", onUpdate: function () {
+        var left = Math.round(o.n), html = "";
+        parts.forEach(function (p) {
+          if (left <= 0) return;
+          var piece = p[0].slice(0, left); left -= p[0].length;
+          html += p[1] ? '<span class="' + p[1] + '">' + piece + "</span>" : piece;
+        });
+        codeEl.innerHTML = html + '<span class="cur"></span>';
+      } });
+    }
+    function show(i) {
+      var prev = frames[cur], next = frames[i];
+      cur = i;
+      gsap.set(next, { zIndex: 2, opacity: 1, clipPath: "inset(0 100% 0 0)", scale: 1.08 });
+      gsap.set(prev, { zIndex: 1 });
+      gsap.to(next, { clipPath: "inset(0 0% 0 0)", scale: 1, duration: 0.9, ease: "power3.inOut",
+        onComplete: function () { gsap.set(frames.filter(function (f) { return f !== next; }), { opacity: 0, clipPath: "none" }); next.style.zIndex = 1; } });
+      gsap.fromTo(sname, { y: 8, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" });
+      sname.textContent = STYLES[i][1];
+      typeLine(STYLES[i][0]);
+    }
+    function pad(n, w) { return String(n).padStart(w, "0"); }
+    var t0 = performance.now();
+    gsap.ticker.add(function () {
+      var f = Math.floor(((performance.now() - t0) / 1000) * 24);
+      tc.textContent = pad(Math.floor(f / 24 / 3600) % 100, 2) + ":" + pad(Math.floor(f / 24 / 60) % 60, 2) + ":" + pad(Math.floor(f / 24) % 60, 2) + ":" + pad(f % 24, 2);
+    });
+    typeLine(STYLES[0][0]);
+    loop = gsap.delayedCall(3, function tick() { show((cur + 1) % frames.length); loop = gsap.delayedCall(3, tick); });
+    // Tạm dừng khi khung chiếu ra khỏi màn hình hoặc tab bị ẩn.
+    ScrollTrigger.create({ trigger: ".stage", start: "top bottom", end: "bottom top",
+      onToggle: function (self) { if (loop) loop.paused(!self.isActive); } });
+    // Khung chiếu trôi nhẹ khi cuộn xuống.
+    gsap.to(".stage-wrap", { yPercent: -6, ease: "none",
+      scrollTrigger: { trigger: ".hero2", start: "top top", end: "bottom top", scrub: true } });
 
     // Thanh tiến độ cuộn ở đầu trang.
     gsap.to(".progress", {
       scaleX: 1, ease: "none",
       scrollTrigger: { trigger: document.body, start: "top top", end: "bottom bottom", scrub: 0.3 }
     });
-
-    // Banner: ảnh lớn dần rồi trượt nhẹ khi cuộn (parallax).
-    gsap.fromTo(".banner img",
-      { scale: 1.14, yPercent: -5 },
-      { scale: 1, yPercent: 5, ease: "none",
-        scrollTrigger: { trigger: ".banner", start: "top bottom", end: "bottom top", scrub: true } });
 
     // Tiêu đề mục và đoạn mô tả.
     gsap.utils.toArray("section.block").forEach(function (sec) {
