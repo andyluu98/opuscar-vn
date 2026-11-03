@@ -62,7 +62,19 @@ ol.steps span{color:var(--muted);font-size:15.5px}
 .cat li a:hover b{color:var(--accent)}
 footer{border-top:1px solid var(--line);padding:30px 0 60px;color:var(--muted);font-size:14.5px}
 footer p{margin:0 0 6px;max-width:70ch}
+.banner{margin:8px 0 0}
+.banner img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid var(--line);background:#0d0d0a}
+.banner figcaption,.gal-note{color:var(--muted);font-size:13.5px;margin-top:8px}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:0;padding:0;list-style:none}
+.gallery li{margin:0}
+.gallery a{display:block;text-decoration:none;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:transform .15s ease,border-color .15s ease}
+.gallery a:hover{transform:translateY(-2px);border-color:var(--accent)}
+.gallery img{display:block;width:100%;height:auto;aspect-ratio:4/3;background:#222}
+.gallery span{display:block;padding:10px 12px;font-size:15px;font-weight:600}
+@media (prefers-reduced-motion:reduce){.gallery a{transition:none}.gallery a:hover{transform:none}}
+@media (max-width:980px){.gallery{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:760px){
+  .gallery{grid-template-columns:repeat(2,1fr);gap:10px}
   .three,.cats{grid-template-columns:1fr}
   .hero{padding:44px 0 32px}
   header.top nav{display:none}
@@ -73,7 +85,7 @@ footer p{margin:0 0 6px;max-width:70ch}
 <header class="top">
   <div class="wrap">
     <b>Opuscar VN</b>
-    <nav><a href="#cai-dat">Cài đặt</a><a href="#phong-cach-rieng">Phong cách riêng</a><a href="#danh-sach">66 phong cách</a><a href="https://github.com/andyluu98/opuscar-vn">GitHub</a></nav>
+    <nav><a href="#vai-phong-cach">Hình mẫu</a><a href="#cai-dat">Cài đặt</a><a href="#phong-cach-rieng">Phong cách riêng</a><a href="#danh-sach">66 phong cách</a><a href="https://github.com/andyluu98/opuscar-vn">GitHub</a></nav>
   </div>
 </header>
 
@@ -89,6 +101,11 @@ footer p{margin:0 0 6px;max-width:70ch}
     <p class="note">Các phong cách được tinh chỉnh cho Claude Opus 5.5. Model khác có thể không tái tạo tốt.</p>
   </div>
 
+  <figure class="banner">
+    <img src="img/banner.svg" alt="Dải phim gồm các khung hình minh họa theo nhiều phong cách: bảng trắng, ukiyo-e, bản vẽ kỹ thuật, kính màu, pixel RPG, hologram, bảng phấn" width="1600" height="900">
+    <figcaption>Hình minh họa vẽ riêng cho trang này, không phải khung phim thật.</figcaption>
+  </figure>
+
   <section class="block">
     <h2>Làm ra một bộ phim thế nào</h2>
     <p class="sub">Không dùng AI sinh video, không dùng cảnh stock. Mọi thứ trên màn hình do agent viết code.</p>
@@ -97,6 +114,26 @@ footer p{margin:0 0 6px;max-width:70ch}
       <div class="card"><h3>Nhạc</h3><p>Nhạc nền gốc dựng từ các thư viện mẫu âm miễn phí, trộn theo nhịp phim.</p></div>
       <div class="card"><h3>Giọng</h3><p>Lời đọc bằng text-to-speech, có bước nghe lại để kiểm phát âm.</p></div>
     </div>
+  </section>
+
+  <section class="block" id="vai-phong-cach">
+    <h2>Một vài phong cách</h2>
+    <p class="sub">Mười hai trong số 66 phong cách. Mỗi phong cách có một tệp STYLE.md mô tả hình, âm thanh và cách dựng.</p>
+    <ul class="gallery">
+      <li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/whiteboard/STYLE.md"><img src="img/phong-cach-whiteboard.svg" alt="Hình minh họa phong cách bảng trắng" loading="lazy" width="480" height="360"><span>Bảng trắng</span></a></li>
+      <li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/watercolor/STYLE.md"><img src="img/phong-cach-watercolor.svg" alt="Hình minh họa phong cách màu nước" loading="lazy" width="480" height="360"><span>Màu nước</span></a></li>
+      <li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/ukiyoe/STYLE.md"><img src="img/phong-cach-ukiyoe.svg" alt="Hình minh họa phong cách ukiyo-e" loading="lazy" width="480" height="360"><span>Ukiyo-e</span></a></li>
+      <li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/pixel-rpg/STYLE.md"><img src="img/phong-cach-pixel-rpg.svg" alt="Hình minh họa phong cách pixel RPG" loading="lazy" width="480" height="360"><span>Pixel RPG</span></a></li>
+      <li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/blueprint/STYLE.md"><img src="img/phong-cach-blueprint.svg" alt="Hình minh họa phong cách bản vẽ kỹ thuật" loading="lazy" width="480" height="360"><span>Bản vẽ kỹ thuật</span></a></li>
+      <li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/risograph/STYLE.md"><img src="img/phong-cach-risograph.svg" alt="Hình minh họa phong cách in Risograph" loading="lazy" width="480" height="360"><span>In Risograph</span></a></li>
+      <li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/woodcut/STYLE.md"><img src="img/phong-cach-woodcut.svg" alt="Hình minh họa phong cách khắc gỗ" loading="lazy" width="480" height="360"><span>Khắc gỗ</span></a></li>
+      <li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/stained-glass/STYLE.md"><img src="img/phong-cach-stained-glass.svg" alt="Hình minh họa phong cách kính màu" loading="lazy" width="480" height="360"><span>Kính màu</span></a></li>
+      <li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/swiss-motion/STYLE.md"><img src="img/phong-cach-swiss-motion.svg" alt="Hình minh họa phong cách đồ họa Thụy Sĩ" loading="lazy" width="480" height="360"><span>Đồ họa Thụy Sĩ</span></a></li>
+      <li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/hologram-hud/STYLE.md"><img src="img/phong-cach-hologram-hud.svg" alt="Hình minh họa phong cách giao diện hologram" loading="lazy" width="480" height="360"><span>Giao diện hologram</span></a></li>
+      <li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/silent-film/STYLE.md"><img src="img/phong-cach-silent-film.svg" alt="Hình minh họa phong cách phim câm" loading="lazy" width="480" height="360"><span>Phim câm</span></a></li>
+      <li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/chalkboard/STYLE.md"><img src="img/phong-cach-chalkboard.svg" alt="Hình minh họa phong cách bảng phấn" loading="lazy" width="480" height="360"><span>Bảng phấn</span></a></li>
+    </ul>
+    <p class="gal-note">Hình minh họa vẽ riêng cho trang này, không phải khung phim thật.</p>
   </section>
 
   <section class="block" id="cai-dat">

@@ -1,5 +1,9 @@
 # Opuscar VN
 
+![Dải phim minh họa nhiều phong cách](docs/img/banner.svg)
+
+<sub>Hình minh họa vẽ riêng cho kho này, không phải khung phim thật.</sub>
+
 **Bộ công cụ phong cách phim dựng hoàn toàn bằng code: 66 phong cách có sẵn, và phong cách riêng của bạn.**
 
 Chọn một phong cách (hoặc tự tạo từ trang trắng), đưa câu chuyện của bạn, rồi để coding agent đạo diễn: agent vẽ hình, soạn nhạc, thu giọng đọc, trộn âm và xuất phim.
@@ -13,6 +17,16 @@ Mọi bộ phim được tạo ra theo cách này đều do agent viết code:
 - **Giọng**: đọc lời bằng text-to-speech
 
 Không dùng AI sinh video, không dùng cảnh stock.
+
+## Một vài phong cách
+
+| | | | |
+|---|---|---|---|
+| <a href="styles/whiteboard/STYLE.md"><img src="docs/img/phong-cach-whiteboard.svg" alt="Hình minh họa phong cách Bảng trắng" width="220"></a><br>Bảng trắng | <a href="styles/watercolor/STYLE.md"><img src="docs/img/phong-cach-watercolor.svg" alt="Hình minh họa phong cách Màu nước" width="220"></a><br>Màu nước | <a href="styles/ukiyoe/STYLE.md"><img src="docs/img/phong-cach-ukiyoe.svg" alt="Hình minh họa phong cách Ukiyo-e" width="220"></a><br>Ukiyo-e | <a href="styles/pixel-rpg/STYLE.md"><img src="docs/img/phong-cach-pixel-rpg.svg" alt="Hình minh họa phong cách Pixel RPG" width="220"></a><br>Pixel RPG |
+| <a href="styles/blueprint/STYLE.md"><img src="docs/img/phong-cach-blueprint.svg" alt="Hình minh họa phong cách Bản vẽ kỹ thuật" width="220"></a><br>Bản vẽ kỹ thuật | <a href="styles/risograph/STYLE.md"><img src="docs/img/phong-cach-risograph.svg" alt="Hình minh họa phong cách In Risograph" width="220"></a><br>In Risograph | <a href="styles/woodcut/STYLE.md"><img src="docs/img/phong-cach-woodcut.svg" alt="Hình minh họa phong cách Khắc gỗ" width="220"></a><br>Khắc gỗ | <a href="styles/stained-glass/STYLE.md"><img src="docs/img/phong-cach-stained-glass.svg" alt="Hình minh họa phong cách Kính màu" width="220"></a><br>Kính màu |
+| <a href="styles/swiss-motion/STYLE.md"><img src="docs/img/phong-cach-swiss-motion.svg" alt="Hình minh họa phong cách Đồ họa Thụy Sĩ" width="220"></a><br>Đồ họa Thụy Sĩ | <a href="styles/hologram-hud/STYLE.md"><img src="docs/img/phong-cach-hologram-hud.svg" alt="Hình minh họa phong cách Giao diện hologram" width="220"></a><br>Giao diện hologram | <a href="styles/silent-film/STYLE.md"><img src="docs/img/phong-cach-silent-film.svg" alt="Hình minh họa phong cách Phim câm" width="220"></a><br>Phim câm | <a href="styles/chalkboard/STYLE.md"><img src="docs/img/phong-cach-chalkboard.svg" alt="Hình minh họa phong cách Bảng phấn" width="220"></a><br>Bảng phấn |
+
+<sub>Hình minh họa vẽ riêng cho kho này. Bấm vào để đọc `STYLE.md` của từng phong cách.</sub>
 
 ## Cách dùng
 
@@ -242,6 +256,10 @@ Bấm vào tên để mở `STYLE.md` của phong cách.
 | Paper Pop-up Book | [`paper-popup`](styles/paper-popup/STYLE.md) | Children's books, Game trailers, Story films |
 | Tilt-Shift Miniature | [`tilt-shift`](styles/tilt-shift/STYLE.md) | City promos, Real estate, Transport |
 
+## Tài nguyên tải thêm
+
+Một số gói lớn (mô hình giọng Kokoro, thư viện mẫu nhạc cụ, HDRI) không nằm trong kho này. Lệnh `sh tools/fetch.sh` tải chúng về từ kho phát hành (`releases`) của dự án gốc, theo danh sách khai báo trong `tools/assets.json`. Mỗi gói giữ giấy phép riêng của nó: xem ghi chú ở [`core/audio/INSTRUMENTS.md`](core/audio/INSTRUMENTS.md) và [`core/assets/polyhaven/SOURCES.md`](core/assets/polyhaven/SOURCES.md). Mô hình nhận dạng giọng (Whisper) tải lần đầu từ Hugging Face.
+
 ## Cấu trúc thư mục
 
 | Thư mục | Nội dung |
@@ -250,7 +268,8 @@ Bấm vào tên để mở `STYLE.md` của phong cách.
 | `core/` | công cụ kết xuất, âm thanh, giọng đọc, thư viện dùng chung |
 | `plugin/` | skill cài vào Claude Code |
 | `tools/` | tải các gói tài sản lớn |
-| `site/` | trang giới thiệu (GitHub Pages) |
+| `site/` | trang giới thiệu (GitHub Pages), kèm hình minh họa trong `site/img/` |
+| `docs/img/` | hình minh họa dùng trong README |
 | `DIRECTOR.md`, `TECHNIQUE.md`, `AGENTS.md`, `MY-STYLES.md` | hướng dẫn cho agent |
 
 ## Giấy phép
