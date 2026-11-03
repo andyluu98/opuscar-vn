@@ -1,0 +1,8 @@
+{
+  "name": "opuscar-vn",
+  "description": "Làm một bộ phim ngắn theo phong cách dựng bằng code: agent đạo diễn, vẽ, soạn nhạc và trộn âm.",
+  "author": { "name": "andyluu98", "url": "https://github.com/andyluu98" },
+  "homepage": "https://andyluu98.github.io/opuscar-vn/",
+  "repository": "https://github.com/andyluu98/opuscar-vn",
+  "license": "MIT"
+}

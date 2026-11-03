@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Opuscar VN</title>
+<meta name="description" content="Bộ phong cách phim dựng hoàn toàn bằng code: 66 phong cách để coding agent đạo diễn, vẽ, soạn nhạc và xuất phim.">
+<style>
+:root{
+  --bg:#f7f6f2; --panel:#ffffff; --ink:#1c1b19; --muted:#5f5c55; --line:#e3e0d8;
+  --accent:#0f766e; --accent-ink:#ffffff; --code:#1c1b19; --code-ink:#f3f1ea; --chip:#e9f3f1;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#121311; --panel:#1b1c19; --ink:#efede6; --muted:#a29f95; --line:#2d2e2a;
+    --accent:#2dd4bf; --accent-ink:#0b1412; --code:#0b0c0a; --code-ink:#e8e6de; --chip:#16302c;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121311; --panel:#1b1c19; --ink:#efede6; --muted:#a29f95; --line:#2d2e2a;
+  --accent:#2dd4bf; --accent-ink:#0b1412; --code:#0b0c0a; --code-ink:#e8e6de; --chip:#16302c;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header.top{border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:5}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:56px}
+header.top b{letter-spacing:.02em}
+header.top nav{display:flex;gap:18px;font-size:15px;flex-wrap:wrap}
+header.top nav a{color:var(--muted);text-decoration:none}
+header.top nav a:hover{color:var(--ink)}
+.hero{padding:72px 0 48px}
+.hero h1{font-size:clamp(34px,6vw,60px);line-height:1.08;margin:0 0 18px;letter-spacing:-.02em;max-width:16ch}
+.hero p.lead{font-size:clamp(18px,2.4vw,22px);color:var(--muted);max-width:60ch;margin:0 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:600;border:1px solid var(--line);color:var(--ink);background:var(--panel)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.note{margin-top:22px;padding:12px 16px;border-left:3px solid var(--accent);background:var(--chip);border-radius:6px;font-size:15px;max-width:62ch}
+section.block{padding:44px 0;border-top:1px solid var(--line)}
+section.block h2{font-size:clamp(24px,3.4vw,34px);margin:0 0 8px;letter-spacing:-.01em}
+section.block p.sub{color:var(--muted);margin:0 0 26px;max-width:62ch}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}
+.card h3{margin:0 0 6px;font-size:18px}
+.card p{margin:0;color:var(--muted);font-size:15.5px}
+pre{background:var(--code);color:var(--code-ink);padding:16px 18px;border-radius:12px;overflow-x:auto;font:14.5px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;margin:0 0 14px}
+ol.steps{padding-left:0;list-style:none;counter-reset:s;display:grid;gap:12px;margin:0}
+ol.steps li{counter-increment:s;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px 16px 64px;position:relative}
+ol.steps li::before{content:counter(s);position:absolute;left:18px;top:14px;width:32px;height:32px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-weight:700}
+ol.steps b{display:block}
+ol.steps span{color:var(--muted);font-size:15.5px}
+.cats{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.cat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.cat h3{margin:0 0 10px;font-size:18px;display:flex;justify-content:space-between;align-items:baseline}
+.cat h3 em{font-style:normal;font-size:13px;color:var(--muted)}
+.cat ul{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.cat li a{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-top:1px solid var(--line);text-decoration:none;color:var(--ink);font-size:15.5px}
+.cat li:first-child a{border-top:0}
+.cat li a span{color:var(--muted);font-size:13.5px;text-align:right}
+.cat li a:hover b{color:var(--accent)}
+footer{border-top:1px solid var(--line);padding:30px 0 60px;color:var(--muted);font-size:14.5px}
+footer p{margin:0 0 6px;max-width:70ch}
+@media (max-width:760px){
+  .three,.cats{grid-template-columns:1fr}
+  .hero{padding:44px 0 32px}
+  header.top nav{display:none}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <b>Opuscar VN</b>
+    <nav><a href="#cai-dat">Cài đặt</a><a href="#phong-cach-rieng">Phong cách riêng</a><a href="#danh-sach">66 phong cách</a><a href="https://github.com/andyluu98/opuscar-vn">GitHub</a></nav>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+  <div class="hero">
+    <h1>Phim ngắn dựng hoàn toàn bằng code.</h1>
+    <p class="lead">Chọn một trong 66 phong cách, đưa câu chuyện của bạn, rồi để coding agent đạo diễn: vẽ hình, soạn nhạc, thu giọng đọc, trộn âm và xuất phim.</p>
+    <div class="btns">
+      <a class="btn primary" href="#cai-dat">Cài skill</a>
+      <a class="btn" href="https://github.com/andyluu98/opuscar-vn">Xem trên GitHub</a>
+    </div>
+    <p class="note">Các phong cách được tinh chỉnh cho Claude Opus 5.5. Model khác có thể không tái tạo tốt.</p>
+  </div>
+
+  <section class="block">
+    <h2>Làm ra một bộ phim thế nào</h2>
+    <p class="sub">Không dùng AI sinh video, không dùng cảnh stock. Mọi thứ trên màn hình do agent viết code.</p>
+    <div class="three">
+      <div class="card"><h3>Hình</h3><p>Trang canvas và WebGL, kết xuất từng khung hình theo đúng phong cách đã chọn.</p></div>
+      <div class="card"><h3>Nhạc</h3><p>Nhạc nền gốc dựng từ các thư viện mẫu âm miễn phí, trộn theo nhịp phim.</p></div>
+      <div class="card"><h3>Giọng</h3><p>Lời đọc bằng text-to-speech, có bước nghe lại để kiểm phát âm.</p></div>
+    </div>
+  </section>
+
+  <section class="block" id="cai-dat">
+    <h2>Cài đặt</h2>
+    <p class="sub">Cách dễ nhất là cài skill vào Claude Code, rồi khởi động lại và dùng từ thư mục nào cũng được.</p>
+<pre>claude plugin marketplace add andyluu98/opuscar-vn
+claude plugin install opuscar-vn@opuscar-vn</pre>
+    <p class="sub">Rồi chỉ cần nói điều bạn muốn:</p>
+<pre>Làm phim 45 giây theo phong cách watercolor về
+trang trại cà phê gia đình tôi. Giọng nữ ấm áp.</pre>
+    <p class="sub">Cần Node 20+, ffmpeg 7+ và Python 3.11+ (hoặc uv). Một bộ phim tốn agent khoảng 30 đến 60 phút. Kho mã đang để riêng tư, máy cài cần đăng nhập GitHub có quyền xem repo.</p>
+  </section>
+
+  <section class="block" id="phong-cach-rieng">
+    <h2>Tạo phong cách riêng</h2>
+    <p class="sub">Đổi một phong cách có sẵn thành của bạn, hoặc bắt đầu từ trang trắng. Màu thương hiệu, logo, nhân vật, giọng điệu kênh đều đổi được.</p>
+    <ol class="steps">
+      <li><b>Lên kế hoạch</b><span>Mỗi lần một câu hỏi, có lựa chọn và lý do. Nói mơ hồ như "cao cấp hơn" cũng được.</span></li>
+      <li><b>Xem bản tóm tắt</b><span>Từng phần trước và sau, kèm cái giá phải trả. Chưa đồng ý thì chưa ghi gì.</span></li>
+      <li><b>Xem trước một khung hình</b><span>Vẽ bằng code thật. Khi đổi phong cách có sẵn, bản gốc nằm cạnh để so.</span></li>
+      <li><b>Phim mẫu 15 đến 30 giây</b><span>Mọi thay đổi đều có trên màn hình, kèm nhạc và hiệu ứng âm thanh.</span></li>
+      <li><b>Giữ lại khi hài lòng</b><span>Phong cách lưu ở máy bạn, lần sau gọi tên là dùng.</span></li>
+    </ol>
+  </section>
+
+  <section class="block" id="danh-sach">
+    <h2>66 phong cách</h2>
+    <p class="sub">Bấm vào một phong cách để đọc mô tả đầy đủ (STYLE.md) trên GitHub.</p>
+    <div class="cats">
+<section class="cat" id="caption-news"><h3>Dựng phim và tư liệu thật <em>8</em></h3><ul><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/caption-news/STYLE.md"><b>Caption News</b><span>Social news, Report explainers, Data shorts</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/city-symphony/STYLE.md"><b>Time-lapse Symphony</b><span>City films, Music montages, Openers</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/countdown/STYLE.md"><b>Live Countdown Split-screen</b><span>Launches, Countdowns, Live events</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/kino-montage/STYLE.md"><b>Constructivist Montage</b><span>Industry histories, Milestones, Collective effort</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/news-package/STYLE.md"><b>Broadcast News Package</b><span>News round-ups, Bulletins, Market updates</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/newsreel/STYLE.md"><b>1920s Newsreel</b><span>History stories, Fads &amp; eras, Anniversaries</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/telestrator/STYLE.md"><b>Sports Telestrator</b><span>Sports analysis, Match recaps, Coaching</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/visual-investigation/STYLE.md"><b>Visual Investigation</b><span>Reconstructions, Fact-checks, Incident reports</span></a></li></ul></section>
+<section class="cat" id="archive-lighttable"><h3>Phim bằng chứng <em>8</em></h3><ul><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/archive-lighttable/STYLE.md"><b>Archive Light Table</b><span>Brand history, Archive stories, Museums</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/briefing-board/STYLE.md"><b>Engineering Briefing Board</b><span>Engineering, Option comparisons, Briefings</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/data-physical/STYLE.md"><b>Data Physicalization</b><span>Annual reports, Investor decks, Energy data</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/lidar-survey/STYLE.md"><b>LiDAR Survey</b><span>Heritage, Environment, Site surveys</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/microscope/STYLE.md"><b>Microscope Story</b><span>Biomedicine, Materials science, Skincare science</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/satellite-briefing/STYLE.md"><b>Satellite Briefing</b><span>Climate, News explainers, Geography</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/teardown/STYLE.md"><b>Exploded Teardown</b><span>Hardware launches, Product pages, Spec explainers</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/white-model/STYLE.md"><b>Projection on White Model</b><span>Urban planning, Exhibitions, City data</span></a></li></ul></section>
+<section class="cat" id="chalkboard"><h3>Vẽ tay và hội họa <em>8</em></h3><ul><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/chalkboard/STYLE.md"><b>Chalkboard</b><span>Word origins, Myth-busting, Lessons</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/crayon-book/STYLE.md"><b>Crayon Picture Book</b><span>Picture books, Bedtime stories, Kids&#x27; learning</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/impasto/STYLE.md"><b>Impasto Oil Painting</b><span>Music videos, Art &amp; culture, Emotional ads</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/ink-wash/STYLE.md"><b>Chinese Ink Wash</b><span>Wuxia, Cultural brands, Poetry</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/one-line/STYLE.md"><b>One-line Drawing</b><span>Brand stories, Life milestones, Minimal ads</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/urban-sketch/STYLE.md"><b>Urban Sketch · Pen &amp; Wash</b><span>City &amp; travel, Architecture, Lifestyle brands</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/watercolor/STYLE.md"><b>Watercolor Brush</b><span>Nature documentary, Travel, Science explainers</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/whiteboard/STYLE.md"><b>Whiteboard Explainer</b><span>Explainers, Online courses, Science</span></a></li></ul></section>
+<section class="cat" id="paper-lantern"><h3>Truyền thống Đông Á <em>4</em></h3><ul><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/paper-lantern/STYLE.md"><b>Paper-cut Lightbox</b><span>Journeys and travel, Farewells and anniversaries, Places and their stories</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/papercut-red/STYLE.md"><b>Red Paper-cut</b><span>Lunar New Year, Festive greetings, Folk tales</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/shadow-puppet/STYLE.md"><b>Shadow Puppetry</b><span>Myths &amp; folklore, Heritage, Festivals</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/ukiyoe/STYLE.md"><b>Ukiyo-e</b><span>Travel, Japanese culture, Poetry</span></a></li></ul></section>
+<section class="cat" id="engraving"><h3>In ấn và khắc <em>6</em></h3><ul><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/engraving/STYLE.md"><b>Copperplate Engraving</b><span>Museum labels, Science explainers, Brand heritage</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/halftone-dossier/STYLE.md"><b>Halftone Dossier</b><span>Humour, Pet content, Social shorts</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/printed-long-take/STYLE.md"><b>Printed Long Take</b><span>Journeys, Wildlife, Landscapes</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/risograph/STYLE.md"><b>Risograph Print</b><span>Indie brands, Zines, Lifestyle</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/silkscreen-poster/STYLE.md"><b>Silkscreen Travel Poster</b><span>Destination guides, Tourism, Event posters</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/woodcut/STYLE.md"><b>Woodcut Print</b><span>Folk tales, Craft brands, Book trailers</span></a></li></ul></section>
+<section class="cat" id="art-deco"><h3>Đồ họa và chữ <em>7</em></h3><ul><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/art-deco/STYLE.md"><b>Art Deco</b><span>Luxury &amp; hospitality, Galas, Invitations</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/ascii-crt/STYLE.md"><b>ASCII / CRT Terminal</b><span>Developer tools, Sci-fi, Tech brands</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/blueprint/STYLE.md"><b>Blueprint</b><span>Engineering, Hardware launches, Tech explainers</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/pictogram-motion/STYLE.md"><b>Pictogram Motion</b><span>Public services and city stories, Brand and event identity films, Explainers told through signs and objects</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/spy-titles/STYLE.md"><b>60s Spy Title Sequence</b><span>Title sequences, Event openers, Trailers</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/stained-glass/STYLE.md"><b>Stained Glass</b><span>Legends, Heritage, Holiday stories</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/swiss-motion/STYLE.md"><b>Swiss Motion Graphics</b><span>Brand identity, Events, Design education</span></a></li></ul></section>
+<section class="cat" id="circuit-board"><h3>Thông tin và thuyết trình <em>8</em></h3><ul><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/circuit-board/STYLE.md"><b>Circuit Board</b><span>Energy, Supply chains, Devices</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/dark-keynote/STYLE.md"><b>Dark Tech Keynote</b><span>Product launches, SaaS, Keynotes</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/dataviz/STYLE.md"><b>Data Storytelling</b><span>Data journalism, Reports, Climate &amp; science</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/hologram-hud/STYLE.md"><b>Sci-fi Hologram HUD</b><span>Spec walkthroughs, Launch videos, Trade shows</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/iso-infographic/STYLE.md"><b>Isometric Infographic</b><span>Process explainers, Supply chains, Annual reports</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/isometric-picture-book/STYLE.md"><b>Isometric Picture Book</b><span>Everyday rules, Queues, Comparisons</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/living-screencast/STYLE.md"><b>Living Screencast</b><span>Product tutorials, Feature launches, Onboarding</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/transit-map/STYLE.md"><b>Transit Map</b><span>Transport, Growth over time, Networks</span></a></li></ul></section>
+<section class="cat" id="cel-anime-80s"><h3>Hoạt hình và anime <em>4</em></h3><ul><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/cel-anime-80s/STYLE.md"><b>80s Cel Anime</b><span>Music videos, Game trailers, Nostalgia</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/midcentury-toon/STYLE.md"><b>Mid-century Cartoon</b><span>Set-up guides, Help centres, How-to</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/rubber-hose/STYLE.md"><b>1930s Rubber Hose Cartoon</b><span>Food &amp; drink, Retro ads, Kids</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/scifi-toon/STYLE.md"><b>Sci-Fi Sitcom Toon</b><span>Comedy, Tech brands, Social shorts</span></a></li></ul></section>
+<section class="cat" id="game-show"><h3>Trò chơi <em>4</em></h3><ul><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/game-show/STYLE.md"><b>Game Show Flat</b><span>Tech timelines, Year in review, Variety shows</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/hd-2d/STYLE.md"><b>HD-2D</b><span>Game trailers, Fantasy, Story films</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/microgame/STYLE.md"><b>Microgame Frenzy</b><span>Game trailers, Onboarding, Social shorts</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/pixel-rpg/STYLE.md"><b>16-bit Pixel RPG</b><span>Game trailers, Recaps, Nostalgia</span></a></li></ul></section>
+<section class="cat" id="backrooms"><h3>Điện ảnh và thời kỳ <em>2</em></h3><ul><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/backrooms/STYLE.md"><b>Liminal Found Footage</b><span>Horror, Mystery &amp; ARG, Game teasers</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/silent-film/STYLE.md"><b>1920s Silent Film</b><span>Comedy, Retro brands, Silent storytelling</span></a></li></ul></section>
+<section class="cat" id="brick-toy"><h3>Chất liệu và 3D <em>7</em></h3><ul><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/brick-toy/STYLE.md"><b>Brick Toy</b><span>Toys &amp; kids, Product builds, Space</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/desktop-flythrough/STYLE.md"><b>Desktop Flythrough</b><span>App explainers, Workflows, Products</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/glass-product/STYLE.md"><b>Glass Product Render</b><span>Product launches, Consumer tech, Beauty</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/lowpoly-island/STYLE.md"><b>Low-poly Isometric Island</b><span>Game trailers, World building, Calm content</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/memphis-diorama/STYLE.md"><b>Memphis Diorama</b><span>Web heroes, Ambient loops, Seasons</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/paper-popup/STYLE.md"><b>Paper Pop-up Book</b><span>Children&#x27;s books, Game trailers, Story films</span></a></li><li><a href="https://github.com/andyluu98/opuscar-vn/blob/main/styles/tilt-shift/STYLE.md"><b>Tilt-Shift Miniature</b><span>City promos, Real estate, Transport</span></a></li></ul></section>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Mã nguồn và tài liệu dưới giấy phép MIT, xem tệp LICENSE trong repo. Tài sản bên thứ ba giữ giấy phép riêng của chúng.</p>
+    <p>Phim bạn làm ra bằng thư viện là của bạn, không cần ghi công.</p>
+  </div>
+</footer>
+</body>
+</html>

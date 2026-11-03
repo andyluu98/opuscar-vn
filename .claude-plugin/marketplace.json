@@ -1,0 +1,17 @@
+{
+  "name": "opuscar-vn",
+  "owner": {
+    "name": "andyluu98",
+    "url": "https://github.com/andyluu98"
+  },
+  "metadata": {
+    "description": "Bộ phong cách phim dựng bằng code cho coding agent (bản tiếng Việt)."
+  },
+  "plugins": [
+    {
+      "name": "opuscar-vn",
+      "source": "./plugin",
+      "description": "Làm một bộ phim ngắn theo phong cách dựng bằng code: agent đạo diễn, vẽ, soạn nhạc và trộn âm."
+    }
+  ]
+}
